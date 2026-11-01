@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1B2A49"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<title>Peace Victory Plan</title>
+<style>
+:root{--bg:#FFF8E7;--card:#fff;--ink:#1B2A49;--mut:#5b6785;--line:#e6d9b0;--gold:#E8A317;--navy:#1B2A49;--red:#E2574C;--blue:#2F6FDE;--green:#3A9D4A;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10172b;--card:#1b2644;--ink:#f4efe0;--mut:#a9b3cc;--line:#33415f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10172b;--card:#1b2644;--ink:#f4efe0;--mut:#a9b3cc;--line:#33415f;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 "Trebuchet MS",Verdana,sans-serif;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+.wrap{max-width:560px;margin:0 auto;padding:12px}
+.hero{background:var(--navy);border-radius:18px;padding:18px 16px;text-align:center;color:#fff;border:3px solid var(--gold)}
+.hero h1{margin:0;font:800 26px/1.1 Georgia,"Times New Roman",serif;color:var(--gold);letter-spacing:.5px}
+.hero .dt{font-size:14px;opacity:.9;margin-top:4px}
+.qt{margin-top:10px;font:italic 14px/1.4 Georgia,serif;color:#F3C969}
+.card{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px;margin-top:12px}
+.card h3{margin:0 0 8px;font-size:17px}
+.sc{display:flex;align-items:center;gap:14px}
+.ring{position:relative;width:120px;height:120px;flex:none}
+.ring svg{transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font:800 32px Georgia,serif}
+.ring small{font-size:12px;display:block;text-align:center;color:var(--mut);margin-top:-8px}
+.msg{font-size:14px;color:var(--mut)}
+.streak{font-weight:700;margin-bottom:4px}
+.done{background:linear-gradient(135deg,#E8A317,#F3C969);color:#1B2A49;border-radius:12px;padding:10px;text-align:center;font-weight:800;margin-top:12px;animation:pop .6s}
+@keyframes pop{0%{transform:scale(.9)}60%{transform:scale(1.04)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.done{animation:none}}
+.row{display:flex;align-items:center;gap:10px;padding:10px 6px;border-top:1px solid var(--line);cursor:pointer;min-height:48px}
+.row:first-of-type{border-top:0}
+.bar{width:6px;align-self:stretch;border-radius:3px;flex:none}
+.cb{width:26px;height:26px;border:2.5px solid;border-radius:8px;flex:none;display:grid;place-items:center;font-weight:900;color:#fff}
+.nm{flex:1}.on{background:rgba(58,157,74,.13);border-radius:10px}.on .nm{font-weight:700}.dn{font-size:11px;font-weight:800;color:#fff;background:var(--green);border-radius:10px;padding:2px 8px}
+.pt{font-size:12px;font-weight:700;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:2px 8px}
+.btn{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:10px 14px;font:700 15px inherit;font-family:inherit;cursor:pointer;min-height:44px}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.btn.sm{padding:6px 10px;min-height:36px;font-size:13px}
+.btn:focus-visible,.row:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+label{display:block;font-size:13px;color:var(--mut);margin:10px 0 3px}
+input[type=text],input[type=number],input[type=date],select{width:100%;padding:10px;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+.days{display:flex;flex-wrap:wrap;gap:6px}.days label{display:flex;align-items:center;gap:4px;margin:0;color:var(--ink)}
+.flex{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.leg{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--mut);margin-top:8px}
+.leg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px}
+.hb{height:14px;border-radius:7px;background:var(--bg);flex:1;overflow:hidden}.hb i{display:block;height:100%}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--navy);display:flex;justify-content:center;gap:6px;padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px))}
+nav button{flex:1;max-width:180px;background:transparent;border:0;color:#fff;font:700 15px inherit;font-family:inherit;padding:12px 4px;border-radius:12px;cursor:pointer}
+nav button.act{background:var(--gold);color:var(--navy)}
+.cf{position:fixed;top:-16px;width:10px;height:14px;z-index:9;animation:fall 2.6s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}</style></head><body>
+<div class="wrap" id="app"></div>
+<nav><button data-a="tab" data-v="today">Today</button><button data-a="tab" data-v="goals">Goals</button><button data-a="tab" data-v="hist">History</button></nav>
+<script>
+const PR={red:['#E2574C','Important and urgent'],gold:['#E8A317','Important, not urgent'],blue:['#2F6FDE','Urgent, not important'],green:['#3A9D4A','Everything else']};
+const DN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const Q=[['Well done is better than well said.','Benjamin Franklin'],['Commit your work to the Lord, and your plans will be established.','Proverbs 16:3'],['We are what we repeatedly do. Excellence is not an act, but a habit.','Will Durant'],['An investment in knowledge pays the best interest.','Benjamin Franklin'],['Whether you think you can, or you think you can’t, you’re right.','Henry Ford'],['The hand of the diligent will rule.','Proverbs 12:24'],['Lost time is never found again.','Benjamin Franklin'],['Do what you can, with what you have, where you are.','Theodore Roosevelt'],['Trust in the Lord with all your heart.','Proverbs 3:5'],['The secret of getting ahead is getting started.','Mark Twain'],['Whatever you do, work at it with all your heart.','Colossians 3:23']];
+Q.push(['Remember the Lord your God, for it is He who gives you power to get wealth.','Deuteronomy 8:18'],['The blessing of the Lord makes one rich, and He adds no sorrow with it.','Proverbs 10:22'],['Wisdom is the principal thing; therefore get wisdom.','Proverbs 4:7'],['If any of you lacks wisdom, let him ask of God, who gives to all liberally.','James 1:5'],['Honor the Lord with your possessions, and with the firstfruits of all your increase.','Proverbs 3:9'],['The plans of the diligent lead surely to plenty.','Proverbs 21:5'],['The fear of the Lord is the beginning of wisdom.','Proverbs 9:10'],['Seek first the kingdom of God and His righteousness, and all these things shall be added to you.','Matthew 6:33'],['Now faith is the substance of things hoped for, the evidence of things not seen.','Hebrews 11:1'],['Blessed are the meek, for they shall inherit the earth.','Matthew 5:5'],['Blessed are the merciful, for they shall obtain mercy.','Matthew 5:7'],['God resists the proud, but gives grace to the humble.','James 4:6'],['Pursue peace with all people, and holiness, without which no one will see the Lord.','Hebrews 12:14'],['God is our refuge and strength, a very present help in trouble.','Psalm 46:1'],['Better is a little with righteousness than vast revenues without justice.','Proverbs 16:8'],['Price is what you pay. Value is what you get.','Warren Buffett'],['Risk comes from not knowing what you’re doing.','Warren Buffett'],['Be fearful when others are greedy, and greedy when others are fearful.','Warren Buffett'],['Someone is sitting in the shade today because someone planted a tree a long time ago.','Warren Buffett'],['Success is a lousy teacher. It seduces smart people into thinking they can’t lose.','Bill Gates'],['Patience is a key element of success.','Bill Gates'],['When something is important enough, you do it even if the odds are not in your favor.','Elon Musk'],['Persistence is very important. You should not give up unless you are forced to give up.','Elon Musk'],['The secret of success is to do the common thing uncommonly well.','John D. Rockefeller Jr.'],['The first man gets the oyster, the second man gets the shell.','Andrew Carnegie'],['Rise early, work hard, strike oil.','J. Paul Getty']);
+const SL=['Morning','Afternoon','Evening'];
+const FDEF=[{id:'f1',n:'Thanksgiving to God',slot:0,s:'daily',d:[]},{id:'f2',n:'The word of God',slot:0,s:'daily',d:[]},{id:'f5',n:'Thanksgiving to God',slot:1,s:'daily',d:[]},{id:'f3',n:'Church',slot:1,s:'days',d:[0]},{id:'f4',n:'Thanksgiving to God',slot:2,s:'daily',d:[]}];
+const ymd=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const T=(id,n,w,p,s,d,date)=>({id,n,w,p,s,d:d||[],date:date||''});
+const def=()=>({tasks:[T('t1','Make multiple sales',20,'red','daily'),T('t2','Strategic planning and budgeting',8,'gold','daily'),T('t3','Coding practice',6,'gold','daily'),T('t4','Chess learning',6,'gold','daily'),T('t5','Read the books',6,'gold','daily'),T('t6','Reflection and self-evaluation',5,'gold','daily'),T('t7','Exercise and sports',5,'gold','daily'),T('t8','Sales skills practice',4,'gold','daily'),T('t9','Time with family and friends',3,'green','daily'),T('t10','Arrange the home',3,'blue','days',[6]),T('t11','Wash clothes',2,'blue','days',[6]),T('t12','Wash dishes',2,'blue','daily'),T('t13','Iron',2,'blue','days',[6]),T('t14','Barrister meeting about the JV agreement',8,'red','once',[],'2026-11-02')],checks:{},found:{},hist:{}});
+let S=null,tab='today',ed=undefined,ek='t',pd=null,ip=null;
+try{S=JSON.parse(localStorage.getItem('pvp')||'null')}catch(e){}
+if(!S||!S.tasks)S=def();
+if(!S.fnd)S.fnd=JSON.parse(JSON.stringify(FDEF));
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();ip=e;render()});
+const save=()=>{try{localStorage.setItem('pvp',JSON.stringify(S))}catch(e){}};
+const sched=(t,d)=>t.s==='daily'||(t.s==='days'&&t.d.includes(d.getDay()))||(t.s==='once'&&t.date===ymd(d));
+function calc(d){const k=ymd(d),ts=S.tasks.filter(t=>sched(t,d)),ck=S.checks[k]||{},fk=S.found[k]||{};
+ const tot=ts.reduce((a,t)=>a+t.w,0),ea=ts.filter(t=>ck[t.id]).reduce((a,t)=>a+t.w,0);
+ const fl=S.fnd.filter(f=>sched(f,d)).sort((a,b)=>a.slot-b.slot);
+ return{k,ts,ck,fk,sc:tot?Math.round(ea/tot*100):0,fl,f:fl.filter(f=>fk[f.id]).length}}
+function snap(){const c=calc(new Date());S.hist[c.k]={sc:c.sc,f:c.f,ft:c.fl.length};save()}
+function streak(){let n=0;for(let i=0;i<400;i++){const d=new Date();d.setDate(d.getDate()-i);const e=i===0?calc(d):S.hist[ymd(d)];if(e&&e.sc>=80)n++;else if(i>0)break}return n}
+function vToday(){const c=calc(new Date()),d=new Date(),q=Q[Math.floor(d/864e5)%Q.length],full=c.sc===100&&c.f===c.fl.length&&c.fl.length>0,R=52,C=2*Math.PI*R;
+ const m=full?'Complete day. Well done.':c.sc===100?'Score is 100, but your foundation is not complete. The day is not fully complete yet.':c.sc>=80?'Strong day. Keep going.':c.sc>0?'Good start. Tick the next goal.':'Tick your first goal to start the score.';
+ const s=streak();
+ return `<div class="hero"><h1>PEACE VICTORY PLAN</h1><div class="dt">${d.toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</div><div class="qt">“${esc(q[0])}”<br>${esc(q[1])}</div></div>${ip?'<div class="flex" style="justify-content:center"><button class="btn" data-a="inst">Install app</button></div>':''}
+ <div class="card"><div class="sc"><div class="ring"><svg width="120" height="120"><circle cx="60" cy="60" r="${R}" fill="none" stroke="var(--line)" stroke-width="12"/><circle cx="60" cy="60" r="${R}" fill="none" stroke="${c.sc>=80?'var(--green)':c.sc>=50?'var(--gold)':'var(--red)'}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-c.sc/100)}"/></svg><b>${c.sc}</b></div>
+ <div><div class="streak">${s?'🔥 '+s+'-day streak (80 and above)':'Reach 80 to start a streak'}</div><div class="msg">Rank: <b>${s>=30?'Champion':s>=14?'Achiever':s>=7?'Builder':s>=3?'Riser':'Starter'}</b></div><div class="msg">Score out of 100. ${m}</div></div></div></div>
+ ${full?'<div class="done">COMPLETE DAY: 100 and a full foundation</div>':''}
+ <div class="card"><h3>Foundation (${c.f}/${c.fl.length}, not scored)</h3>${c.fl.map(f=>rw('f',f.id,f.n,!!c.fk[f.id],'var(--gold)',SL[f.slot])).join('')}</div>
+ <div class="card"><h3>Today’s goals</h3>${c.ts.length?[...c.ts].sort((a,b)=>b.w-a.w).map(t=>rw('t',t.id,t.n,!!c.ck[t.id],PR[t.p][0],t.w+' pts')).join(''):'<div class="msg">No goals scheduled today. Add one in Goals.</div>'}
+ <div class="leg">${Object.values(PR).map(p=>`<span><i style="background:${p[0]}"></i>${p[1]}</span>`).join('')}</div></div>`}
+const rw=(a,id,n,on,col,pt)=>`<div class="row ${on?'on':''}" tabindex="0" role="checkbox" aria-checked="${on}" data-a="${a==='f'?'tf':'tt'}" data-id="${id}"><div class="bar" style="background:${col}"></div><div class="cb" style="border-color:${on?'var(--green)':col};background:${on?'var(--green)':'transparent'}">${on?'✓':''}</div><div class="nm">${esc(n)}</div>${on?'<span class="dn">Done</span>':''}${pt?`<span class="pt">${pt}</span>`:''}</div>`;
+function when(t){return t.s==='daily'?'Every day':t.s==='once'?'On '+t.date:t.d.map(i=>DN[i]).join(', ')}
+function vGoals(){return `<div class="hero"><h1>MY GOALS</h1><div class="dt">Add, change or remove goals. More points means it matters more.</div></div>
+ ${ed!==undefined?form(ed):`<div class="flex"><button class="btn" data-a="add">+ Add a goal</button><button class="btn ghost" data-a="addf">+ Add a foundation item</button></div>`}
+ <div class="card">${[...S.tasks].sort((a,b)=>b.w-a.w).map(t=>`<div class="row" style="cursor:default"><div class="bar" style="background:${PR[t.p][0]}"></div><div class="nm">${esc(t.n)}<div class="msg">${when(t)} · ${t.w} pts</div></div><button class="btn sm ghost" data-a="edit" data-id="${t.id}">Edit</button><button class="btn sm ghost" data-a="del" data-id="${t.id}">${pd===t.id?'Tap again':'Delete'}</button></div>`).join('')||'<div class="msg">No goals yet. Add your first one.</div>'}</div><div class="card"><h3>Foundation (not scored)</h3>${[...S.fnd].sort((a,b)=>a.slot-b.slot).map(f=>`<div class="row" style="cursor:default"><div class="bar" style="background:var(--gold)"></div><div class="nm">${esc(f.n)}<div class="msg">${SL[f.slot]} · ${f.s==='daily'?'Every day':f.d.map(i=>DN[i]).join(', ')}</div></div><button class="btn sm ghost" data-a="editf" data-id="${f.id}">Edit</button><button class="btn sm ghost" data-a="delf" data-id="${f.id}">${pd===f.id?'Tap again':'Delete'}</button></div>`).join('')}</div>`}
+function form(t){const x=t||{...T('','',5,'gold','daily',[],ymd(new Date())),slot:0};
+ return `<div class="card"><h3>${ek==='f'?(t?'Edit foundation item':'New foundation item'):(t?'Edit goal':'New goal')}</h3><label for="fn">Goal</label><input type="text" id="fn" value="${esc(x.n)}">
+ ${ek==='f'?`<label for="fs">Time of day</label><select id="fs">${SL.map((n,i)=>`<option value="${i}" ${i===x.slot?'selected':''}>${n}</option>`).join('')}</select>`:`<label for="fw">Points (1 to 50)</label><input type="number" id="fw" min="1" max="50" value="${x.w}">`}
+ ${ek==='f'?'':`<label for="fp">Priority</label><select id="fp">${Object.keys(PR).map(k=>`<option value="${k}" ${k===x.p?'selected':''}>${PR[k][1]}</option>`).join('')}</select>`}
+ <label for="fr">Repeats</label><select id="fr"><option value="daily" ${x.s==='daily'?'selected':''}>Every day</option><option value="days" ${x.s==='days'?'selected':''}>Chosen days</option><option value="once" ${x.s==='once'?'selected':''}>One time only</option></select>
+ <div class="days" id="fd">${DN.map((n,i)=>`<label><input type="checkbox" value="${i}" ${x.d.includes(i)?'checked':''}>${n}</label>`).join('')}</div>
+ <input type="date" id="fdt" value="${x.date||ymd(new Date())}">
+ <div class="flex"><button class="btn" data-a="sv" data-id="${x.id}">Save goal</button><button class="btn ghost" data-a="cx">Cancel</button></div></div>`}
+function vHist(){const ks=Object.keys(S.hist).sort().reverse().slice(0,14),sc=ks.slice(0,7).map(k=>S.hist[k].sc),avg=sc.length?Math.round(sc.reduce((a,b)=>a+b,0)/sc.length):0,best=ks.length?Math.max(...ks.map(k=>S.hist[k].sc)):0;
+ return `<div class="hero"><h1>HISTORY OF WINS</h1><div class="dt">Your score and foundation, day by day</div></div>
+ <div class="card"><h3>Last 7 days</h3><div class="msg">Average score: <b>${avg}</b> · Best day: <b>${best}</b> · Streak: <b>${streak()} days</b></div></div>
+ ${(()=>{const o=[];for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const e=S.hist[ymd(d)];o.push(`<div style="flex:1;text-align:center;font-size:11px"><div style="height:${e?Math.max(4,e.sc):4}px;background:${e&&e.sc>=80?'var(--green)':e&&e.sc>=50?'var(--gold)':'var(--red)'};border-radius:6px 6px 0 0"></div>${DN[d.getDay()]}</div>`)}return `<div class="card"><h3>This week</h3><div style="display:flex;align-items:flex-end;gap:6px;height:130px">${o.join('')}</div></div>`})()}<div class="card"><h3>Daily record</h3>${ks.length?ks.map(k=>{const e=S.hist[k];return `<div class="row" style="cursor:default"><div style="width:84px;font-size:13px">${k.slice(5)}</div><div class="hb"><i style="width:${e.sc}%;background:${e.sc>=80?'var(--green)':e.sc>=50?'var(--gold)':'var(--red)'}"></i></div><span class="pt">${e.sc} · ${e.f}/${e.ft}</span></div>`}).join(''):'<div class="msg">No history yet. Tick a goal today and it starts here.</div>'}</div>`}
+function confetti(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const cs=['#E8A317','#E2574C','#2F6FDE','#3A9D4A','#7B3FA0'];for(let i=0;i<50;i++){const d=document.createElement('div');d.className='cf';d.style.cssText='left:'+Math.random()*100+'vw;background:'+cs[i%5]+';animation-delay:'+Math.random()*.6+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),3600)}}
+function render(){document.getElementById('app').innerHTML=tab==='today'?vToday():tab==='goals'?vGoals():vHist();
+ document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('act',b.dataset.v===tab));vis();if(tab==='today'){const c=calc(new Date());if(c.sc===100&&c.fl.length&&c.f===c.fl.length&&S.cel!==c.k){S.cel=c.k;save();confetti()}}}
+function vis(){const r=document.getElementById('fr');if(!r)return;document.getElementById('fd').style.display=r.value==='days'?'flex':'none';document.getElementById('fdt').style.display=r.value==='once'?'block':'none'}
+document.addEventListener('change',e=>{if(e.target.id==='fr')vis()});
+document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('.row[data-a]')){e.preventDefault();e.target.click()}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,id=b.dataset.id,k=ymd(new Date());
+ if(a==='tab'){tab=b.dataset.v;ed=undefined}
+ else if(a==='tt'){(S.checks[k]=S.checks[k]||{})[id]=!(S.checks[k]||{})[id];snap()}
+ else if(a==='tf'){(S.found[k]=S.found[k]||{})[id]=!(S.found[k]||{})[id];snap()}
+ else if(a==='add'){ek='t';ed=null}else if(a==='addf'){ek='f';ed=null}else if(a==='editf'){ek='f';ed=S.fnd.find(t=>t.id===id)}else if(a==='delf'){if(pd===id){S.fnd=S.fnd.filter(t=>t.id!==id);pd=null;snap()}else pd=id}else if(a==='inst'){if(ip){ip.prompt();ip=null}}
+ else if(a==='edit'){ek='t';ed=S.tasks.find(t=>t.id===id)}
+ else if(a==='cx')ed=undefined;
+ else if(a==='del'){if(pd===id){S.tasks=S.tasks.filter(t=>t.id!==id);pd=null;snap()}else pd=id}
+ else if(a==='sv'){const n=document.getElementById('fn').value.trim();if(!n){document.getElementById('fn').focus();return}
+  const s=document.getElementById('fr').value,d=[...document.querySelectorAll('#fd input:checked')].map(i=>+i.value),
+  o={id:id||ek+Date.now(),n,s:s==='days'&&!d.length?'daily':s,d,date:document.getElementById('fdt').value};if(ek==='f')o.slot=+document.getElementById('fs').value;else{o.w=Math.min(50,Math.max(1,+document.getElementById('fw').value||5));o.p=document.getElementById('fp').value}
+  const L=ek==='f'?S.fnd:S.tasks,i=L.findIndex(t=>t.id===id);if(i>=0)L[i]=o;else L.push(o);ed=undefined;snap()}
+ if(a!=='del')pd=a==='del'?pd:null;save();render()});
+snap();render();if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+</script></body></html>
